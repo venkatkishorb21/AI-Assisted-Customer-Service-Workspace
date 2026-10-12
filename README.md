@@ -1,194 +1,165 @@
-# OnGround CallOps AI 🎧⚡
+# OnGround CallOps AI 🎧
 
-**Call Centre Staff Operations & AI Copilot Platform**  
+### Call Centre Staff Operations & AI Copilot Platform
+
 **Project Owner:** Venkat Kishor
 
----
+## Project Overview
 
-## 📖 Project Overview
-**OnGround CallOps AI** is a modern, responsive call-centre staff management application built for ground logistics, fleet telematics, and customer support triage. It provides an all-in-one console combining real-time queue orchestration, customer history, staff presence tracking, business analytics, and a deterministic AI Copilot guidance engine.
+OnGround CallOps AI is a modern, responsive call-centre staff management application designed to streamline customer support operations. It provides a centralized interface for managing customer interactions, monitoring call queues, tracking agent performance, and displaying AI-assisted recommendations.
 
-The application runs entirely on the frontend with browser state and `localStorage` persistence, requiring no external backend or database server.
+The application uses frontend state, realistic mock data, and browser `localStorage` for persistence. No backend server or database is required.
 
----
-
-## 🚀 Key Features
+## Key Features
 
 ### 1. Operations Dashboard
-- **Live KPI Metrics**: Total calls handled, open and active cases, cases resolved today, average handling time (AHT), and active floor staffing.
-- **Dynamic Performance Charts**: Recharts composed visualization with toggles for:
-  - *Volume & Resolution*: Inbound call volume, resolved cases, and escalations.
-  - *Efficiency & SLA*: Average handling time (minutes) and SLA adherence percentage.
-- **Floor Presence Tracker**: Live agent availability grid (Available, In Call, Wrap-up, Break, Offline) with quick status toggling.
-- **Urgent & High-Priority Table**: Critical (P1) and High (P2) tickets nearing SLA breach with direct links to the workspace.
-- **Recent Interactions Stream**: Activity feed logging caller touches, staff notes, and case resolutions.
+- Call handling, open cases, resolved cases, and average handling time metrics.
+- Interactive performance charts.
+- Agent availability monitoring.
+- High-priority case tracking.
+- Recent customer interaction activity.
 
-### 2. Multi-Channel Call Queue
-- **Queue Table**: Displays Case ID, customer name, company, category, priority badge, status, assigned agent, wait time, and SLA countdowns.
-- **Search & Filtering**: Search across ticket IDs, customer names, companies, and subjects. Filter by Category, Priority, Status, and Assigned Agent.
-- **Quick-Access Tabs**: `Open & Unresolved`, `All Cases`, `Critical (P1)`, `Assigned to Me` (Venkat Kishor), and `Resolved Archive`.
-- **Queue Sorting**: Sort ascending and descending by wait time, priority severity, or creation timestamp.
-- **Inline Agent Reassignment**: Reassign any ticket directly from the table row dropdown.
-- **CSV Export**: One-click download of the active filtered ticket table.
-- **Call Simulator**: Modal test harness to inject simulated customer calls with custom categories, severity, and customer profiles.
+### 2. Call Queue Management
+- Customer and case information.
+- Search, filtering, and sorting.
+- Priority and status indicators.
+- Agent assignment and reassignment.
+- Quick-access views for open, critical, assigned, and resolved cases.
+- CSV export and simulated incoming call functionality, where implemented.
 
-### 3. Customer Workspace
-- **Customer Profile Card**: Contact details (email, phone, location), tier badge (`Enterprise VIP`, `Growth Corporate`, `Standard Pro`), contract ARR, CSAT score, and lifetime ticket counts.
-- **Case Controls**: Instant status updates (`Open`, `In Progress`, `Escalated`, `Pending Follow-up`, `Resolved`, `Closed`), priority shifts, and agent reassignment.
-- **Conversation History & Audio Simulator**:
-  - Simulated live HD call audio player with play/pause, duration timer, and animated waveform bars.
-  - Full transcript history with customer sentiment badges (`Critical Tone`, `Frustrated`, `Pleased`).
-  - Active reply composer to send responses directly into the transcript.
-- **Internal Staff Notes**: Private team notes with author attribution, timestamps, deletion, and "Pin to Top" toggles.
-- **Resolution Workflow**: Confirmation dialog to document technical root causes and mark cases as Resolved.
-- **Follow-up Scheduler**: Interactive modal to schedule follow-up dates, times, channels (`Phone Call`, `Video Call`, `Email`, `Field Tech Visit`), and custom instructions.
+### 3. Customer Interaction Workspace
+- Customer profile and interaction history.
+- Case status and priority updates.
+- Agent reassignment.
+- Conversation transcript and reply composer.
+- Internal staff notes.
+- Resolution workflow.
+- Follow-up scheduling.
 
-### 4. AI Assistance Panel (Deterministic Copilot)
-> **Simulated AI Engine**: Clearly labelled as rule-based heuristics (*OnGround Intelligence Core v2.4*). No external LLM or backend is connected.
-- **Conversation Summary**: Condensed summary of customer issues and emotional sentiment.
-- **Key Concerns Extraction**: Identifies operational bottlenecks from conversation transcripts.
-- **Escalation Warning & Risk Meter**: High, Moderate, or Low risk score with trigger explanations (e.g. churn keywords, high SLA proximity, Enterprise tier).
-- **Suggested Customer Response**: Contextual response draft with:
-  - **Insert into Reply Box**: One-click insertion into the active message composer.
-  - **Copy to Clipboard**: Quick copy with confirmation.
-- **Recommended Next Action**: Standard Operating Procedure (SOP) playbooks (e.g., SRE incident bridge routing, credit token dispatch, OTA device reboot) with simulated execution logged into internal notes.
-- **Transparent Explanation**: Explains why recommendations were generated and references standard operating procedure codes (e.g. `SOP-FIN-204`, `SOP-TECH-302`).
+### 4. AI Assistance Panel
+The application includes a simulated, rule-based AI assistance panel that demonstrates:
+- Conversation summaries.
+- Customer concern identification.
+- Suggested responses.
+- Escalation warnings.
+- Recommended next actions.
+- Explanations for recommendations.
 
-### 5. Team & Analytics
-- **Workforce Performance KPIs**: Ingestion totals, team resolution rates, average handling time, and mean CSAT scores.
-- **Interactive Recharts Visualizations**:
-  - *Hourly Call Velocity & Wait Trends*: Bar chart tracking call volume across shift hours.
-  - *Incident Category Distribution*: Donut chart with category shares and legends.
-  - *Average Handling Time Benchmarking*: Horizontal bar chart comparing agent AHT against the 5.0 minute target.
-- **Agent Performance Leaderboard**: Full team scorecard with resolution ratios, handled volumes, and one-click agent filtering.
-- **Date & Department Filters**: Switch between `Today`, `Last 7 Days`, `Last 30 Days`, and `This Quarter`.
+**Note:** The AI assistance is simulated using deterministic rules. No live AI model or external AI API is connected.
 
----
+### 5. Team and Analytics
+- Agent performance indicators.
+- Resolution rate comparisons.
+- Average handling time analytics.
+- Interactive charts.
+- Case category distribution.
+- Date and department filters, where implemented.
 
-## 🛠️ Technology Stack
-- **Framework**: React 19 + TypeScript
-- **Bundler**: Vite 8
-- **Styling**: Tailwind CSS 3.4
-- **Routing**: React Router v7
-- **Data Visualizations**: Recharts
-- **Icons**: Lucide React
-- **State Management**: React Context API + LocalStorage Synchronization
+## Technology Stack
 
----
+- **Frontend:** React 19
+- **Language:** TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Routing:** React Router
+- **Charts:** Recharts
+- **Icons:** Lucide React
+- **State Management:** React Context API
+- **Persistence:** Browser localStorage
 
-## 💻 Installation & Setup
+## Project Architecture
+
+The application follows a component-based frontend architecture.
+
+- `src/components/` — Reusable interface components.
+- `src/pages/` — Main application pages.
+- `src/context/` — Shared application state.
+- `src/data/` — Sample data.
+- `src/types/` — TypeScript interfaces.
+- `src/utils/` — Utility functions and simulated AI rules.
+- `public/` — Static assets.
+- `package.json` — Dependencies and scripts.
+- `vite.config.ts` — Vite configuration.
+- `tailwind.config.js` — Tailwind CSS configuration.
+
+The exact folder structure may vary depending on the final implementation.
+
+## Installation and Setup
 
 ### Prerequisites
-- Node.js (v18.0 or newer)
-- npm or yarn
 
-### Commands
+- Node.js 18 or newer, compatible with the project's dependencies.
+- npm.
+
+### 1. Clone the repository
+
 ```bash
-# 1. Navigate to project root
-cd "c:/MCA_3rd_Sem/OnGround CallOps AI"
+git clone https://github.com/venkatkishorb21/AI-Assisted-Customer-Service-Workspace.git
+```
 
-# 2. Install dependencies
-npm install --legacy-peer-deps
+### 2. Navigate to the project folder
 
-# 3. Start development server
+```bash
+cd AI-Assisted-Customer-Service-Workspace
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+If dependency compatibility issues occur, inspect the error before considering alternative installation options.
+
+### 4. Start the development server
+
+```bash
 npm run dev
+```
 
-# 4. Create production build
+Open the local URL printed in the terminal, typically `http://localhost:5173/`.
+
+### 5. Create a production build
+
+```bash
 npm run build
 ```
 
-The application runs locally at `http://localhost:5173/`.
+## Testing
 
----
+The application should be checked for:
+- Navigation and routing.
+- Search, filtering, and sorting.
+- Customer case updates.
+- Dashboard metric consistency.
+- Form validation and notifications.
+- Browser storage persistence.
+- Responsive layout.
+- Production build errors.
 
-## 🗂️ Folder Structure
-```
-OnGround CallOps AI/
-├── index.html                     # HTML shell with Inter typography
-├── package.json                   # Dependencies and scripts
-├── tailwind.config.js             # Tailwind CSS tokens
-├── tsconfig.json                  # Root TypeScript configuration
-├── tsconfig.app.json              # App TypeScript compiler configuration
-├── vite.config.ts                 # Vite bundler configuration
-├── .gitignore                     # Git ignore rules
-└── src/
-    ├── main.tsx                   # React root entry point
-    ├── App.tsx                    # Shell layout & React Router routing
-    ├── index.css                  # Tailwind styles and custom scrollbar rules
-    ├── types/
-    │   └── index.ts               # Core TypeScript data interfaces
-    ├── data/
-    │   └── mockData.ts            # Realistic mock cases, agents, and metrics
-    ├── utils/
-    │   └── aiEngine.ts            # Deterministic AI rules engine
-    ├── context/
-    │   └── AppContext.tsx         # Central state management & localStorage persistence
-    ├── components/
-    │   ├── common/
-    │   │   ├── Header.tsx         # Top navigation, demo role switcher, VK avatar
-    │   │   ├── Sidebar.tsx        # Responsive navigation and agent shift card
-    │   │   ├── ToastContainer.tsx # Dynamic toast notifications
-    │   │   └── SimulateCallModal.tsx # Inbound call simulation modal
-    │   ├── dashboard/
-    │   │   ├── KpiCard.tsx        # Metric card with trend indicators
-    │   │   ├── PerformanceCharts.tsx # Recharts volume and handling time charts
-    │   │   ├── AgentAvailabilityList.tsx # Live floor staffing presence list
-    │   │   ├── HighPriorityTable.tsx # High-priority case action table
-    │   │   └── RecentInteractionsFeed.tsx # Omni-channel interaction activity feed
-    │   ├── queue/
-    │   │   └── QueueTable.tsx     # Filterable, sortable call queue table
-    │   ├── workspace/
-    │   │   ├── CustomerProfileCard.tsx # Customer contract and contact details
-    │   │   ├── ConversationView.tsx    # Live audio playback, waveform & composer
-    │   │   ├── InternalNotesView.tsx   # Staff internal notes with pinning
-    │   │   ├── ResolutionModal.tsx     # Confirmation dialog for closing cases
-    │   │   ├── FollowUpModal.tsx       # Scheduled follow-up booking dialog
-    │   │   └── AiAssistancePanel.tsx   # Deterministic AI Copilot console
-    │   └── analytics/
-    │       ├── AnalyticsCharts.tsx     # Hourly velocity, donut distribution, AHT bars
-    │       └── AgentLeaderboard.tsx    # Agent scorecard with interactive filter
-    └── pages/
-        ├── DashboardPage.tsx      # Main operational command center
-        ├── QueuePage.tsx          # Real-time multi-channel ticket queue
-        ├── WorkspacePage.tsx      # Deep triage console with AI Copilot
-        └── AnalyticsPage.tsx      # Workforce analytics & agent scorecard
-```
+Only tests that have actually been executed should be reported as passed.
 
----
+## Known Limitations
 
-## 🖥️ Screen Layouts & UI Structure
+1. **Frontend-only application:** No backend server, remote database, or server-side synchronization.
+2. **Mock data:** Customer records, call activities, and agent information are sample data.
+3. **Simulated AI:** Recommendations use predefined rules rather than a live generative AI model.
+4. **Simulated calls:** Audio and call-related interactions may be demonstrations rather than real telephony integrations.
+5. **Local persistence:** Data saved in localStorage is specific to the browser and device.
 
-### Dashboard (`/`)
-```
-+---------------------------------------------------------------------------------+
-| Top Bar: Logo | Global Search | Role: Specialist | Status: Available | [VK User] |
-+---------------------------------------------------------------------------------+
-| Sidebar    | Command Banner: "Live Operations Floor" | [Simulate Call]         |
-| - Dash     +--------------------------------------------------------------------+
-| - Queue    | KPI 1: Calls | KPI 2: Open | KPI 3: Resolved | KPI 4: AHT | KPI 5: Staff |
-| - Workspc  +------------------------------------+-------------------------------+
-| - Analytics| Performance Charts (Recharts)      | Live Agent Availability (VK)  |
-|            +------------------------------------+-------------------------------+
-|            | Urgent & High-Priority Cases Table | Recent Interactions Feed      |
-+---------------------------------------------------------------------------------+
-```
+## AI Development Tools
 
-### Customer Workspace (`/workspace/:caseId`)
-```
-+---------------------------------------------------------------------------------+
-| Case Bar: [<- Queue] CAS-8902 | Priority: High | Status: In Progress | [Resolve]|
-+---------------------------------------------------------------------------------+
-| Customer Card      | Conversation View & Live Audio | AI Copilot (Deterministic)|
-| - Profile & Tier   | - Audio waveform & playback    | - Summary & Tone          |
-| - Contact & ARR    | - Transcript messages          | - Risk: Moderate          |
-| Follow-up Card     | - Message composer             | - Suggested Response      |
-| Staff Notes (Pinned)                                | - SOP: SOP-FIN-204        |
-+---------------------------------------------------------------------------------+
-```
+AI-assisted development tools may be used to support implementation, debugging, and documentation. The specific tools used should be listed accurately by the project owner.
 
----
+## Future Enhancements
 
-## ⚠️ Known Limitations
-1. **Frontend-Only Architecture**: All data is stored in the browser's `localStorage` and memory. There is no remote database or backend server sync.
-2. **Simulated AI Engine**: AI Copilot recommendations are generated deterministically using keyword heuristics, customer tier SLA matrices, and category rule playbooks rather than a live generative LLM API.
-3. **Simulated Audio Streaming**: The call audio playback bar simulates live streaming with an animated audio waveform and timer, without loading actual binary voice recordings.
+- Backend and database integration.
+- Secure authentication and role-based access control.
+- Real-time call centre integrations.
+- Live AI-powered conversation summaries.
+- Automated testing and continuous integration.
+- Cloud deployment.
+
+## License
+
+This project was developed as a frontend engineering assignment and portfolio project. No open-source license is specified yet.
